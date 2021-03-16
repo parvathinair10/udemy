@@ -1,0 +1,25 @@
+.Createuser{
+    width: 70%;
+    height: 500px;
+    border:2px solid black;
+    margin: auto;
+    margin-top: 128px;
+    border-radius: 10px;
+    background-color: rgb(220, 220, 235);
+}
+.styling{
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+}
+#create{
+   height: 50px;
+   width: 100px;
+   margin-top: 50px;
+   
+}
+.spacing{
+    margin-top: 15px;
+}
