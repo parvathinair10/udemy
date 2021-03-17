@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Adminlogin.css';
 
-import {BrowserRouter,Route,Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Adminlogin extends Component {
   render() {

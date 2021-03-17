@@ -1,5 +1,5 @@
 .Edit{
-    width: 500px;
+    width: 70%;
     height: 500px;
     border:2px solid black;
     margin: auto;
@@ -35,4 +35,7 @@
     margin-top: 20px;
     margin-left: 19px;
 
+}
+.fetchdata{
+    background-color: hotpink;
 }

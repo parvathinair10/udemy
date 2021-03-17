@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Createuser.css';
 
-import {BrowserRouter,Route,Link} from "react-router-dom";
+// import {BrowserRouter,Route,Link} from "react-router-dom";
+import axios from 'axios';
 
 class Createuser extends Component {
   render() {
