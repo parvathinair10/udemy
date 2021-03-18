@@ -6,13 +6,20 @@ import './Editmovies.css';
 
 
 
-import {BrowserRouter,Route,Link} from "react-router-dom";
+
+import {Link} from "react-router-dom";
 import axios from 'axios';
 
 class Editmovies extends Component {
 
+    
 
     state={
+                name:'',                            //for textboxes
+                date:'',
+                image:'',
+                description:'',
+
                 loadedmovie:null
           }
 
@@ -20,10 +27,33 @@ class Editmovies extends Component {
         if(this.props.id){
             axios.get('https://jsonplaceholder.typicode.com/posts/'+this.props.id)
             .then(response=>{
-                // console.log(response);
+                console.log(response);
                 this.setState({loadedmovie:response.data})
             })
         }
+    }
+
+
+    //to add the data of (name,date,image,description)
+    postDataHandler=()=>{
+        const movie={
+                        name:this.state.name,
+                        date:this.state.date,
+                        image:this.state.image,
+                        description:this.state.description
+                    }
+        axios.post('https://jsonplaceholder.typicode.com/posts',movie)
+             .then(response=>{
+                 console.log(response);
+             })
+    }
+
+    //to delete 
+    deletePostHandler=()=>{
+        axios.delete('https://jsonplaceholder.typicode.com/posts/'+this.props.id)
+             .then(response=>{
+                 console.log(response);
+             })
     }
     
     
@@ -33,7 +63,7 @@ class Editmovies extends Component {
     
     // if(this.props.id)
     // {
-    //   const movie=<p>loading...</p>
+    //     console.log(this.props.id);
     // }
     // if(this.state.loadedmovie)
     // {
@@ -51,36 +81,38 @@ class Editmovies extends Component {
                         </ul>
                         
                         
-
+                        {/* Starting of the form */}
                         <form>
 
                         <div className="decorate">
 
                         <div id="space1">
                             <label for="txt1">Name:</label>
-                            <input type="text" id="txt1"></input>
+                            <input type="text" id="txt1" value={this.state.name} onChange={(event) => this.setState({name: event.target.value})}></input>
                         </div>
 
                         <div id="space2">
-                            <label for="txt1"> Release Date:</label>
-                            <input type="text" id="txt1"></input>
+                            <label for="txt2"> Release Date:</label>
+                            <input type="text" id="txt2"  value={this.state.date} onChange={(event) => this.setState({date: event.target.value})}></input>
                         </div>
 
                         <div id="space3">
-                            <label for="txt1">Image:</label>
-                            <input type="text" id="txt1"></input>
+                            <label for="txt3">Image:</label>
+                            <input type="text" id="txt3"  value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}></input>
                         </div>
 
                         <div id="space4">
-                            <label for="txt1">Description:</label>
-                            <input type="text" id="txt1"></input>
+                            <label for="txt4">Description:</label>
+                            <input type="text" id="txt4"  value={this.state.description} onChange={(event) => this.setState({description: event.target.value})}></input>
                         </div>
                         
-                        <button className="btn">Add</button>
+                        <button className="btn" onClick={this.postDataHandler}>Add</button>
                         <button className="btn">Update</button>
                         <button className="btn">Delete</button>
                        
                         </div>
+
+                        
 
                         </form>
 
