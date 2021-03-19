@@ -88,22 +88,22 @@ class Editmovies extends Component {
 
                         <div id="space1">
                             <label for="txt1">Name:</label>
-                            <input type="text" id="txt1" value={this.state.name} onChange={(event) => this.setState({name: event.target.value})}></input>
+                            <input type="text" id="txt1" className="editinput" value={this.state.name} onChange={(event) => this.setState({name: event.target.value})}></input>
                         </div>
 
                         <div id="space2">
                             <label for="txt2"> Release Date:</label>
-                            <input type="text" id="txt2"  value={this.state.date} onChange={(event) => this.setState({date: event.target.value})}></input>
+                            <input type="text" id="txt2" className="editinput" value={this.state.date} onChange={(event) => this.setState({date: event.target.value})}></input>
                         </div>
 
-                        <div id="space3">
+                        {/* <div id="space3">
                             <label for="txt3">Image:</label>
-                            <input type="text" id="txt3"  value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}></input>
-                        </div>
+                            <input type="text" id="txt3" className="editinput" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}></input>
+                        </div> */}
 
                         <div id="space4">
                             <label for="txt4">Description:</label>
-                            <input type="text" id="txt4"  value={this.state.description} onChange={(event) => this.setState({description: event.target.value})}></input>
+                            <input type="text" id="txt4" className="editinput" value={this.state.description} onChange={(event) => this.setState({description: event.target.value})}></input>
                         </div>
                         
                         <button className="btn" onClick={this.postDataHandler}>Add</button>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Defaultpage.css';
 
 // import {BrowserRouter,Route,Link} from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 
 class Defaultpage extends Component {
   render() {

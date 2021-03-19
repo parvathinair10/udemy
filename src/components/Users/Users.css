@@ -1,20 +1,49 @@
-.Users{
+.Userlogin{
     width: 500px;
-    height: 500px;
+    height: 450px;
     border:2px solid black;
     margin: auto;
-    margin-top: 128px;
+    margin-top: 90px;
     border-radius: 10px;
     background-color: rgb(220, 220, 235);
+    background-image: url('../../assets/background.jpg');
 }
-.userstyle{
+.Userlogin:hover{
+    box-shadow: 10px 10px rgb(27, 25, 25);
+}
+.UserloginStyling{
+    width: 300px;
     height: 200px;
-    width: 200px;
-    margin:auto;
-    margin-top: 90px;
+    margin: 150px auto;
+    margin-left: 150px;
+    margin-top: 155px;
 }
-#Usrlogin{
-    height: 39px;
-    width: 97px;
-    margin-top: 14px;
+.userinput{
+    width: 185px;
+    height: 35px;
+}
+.userinput:hover{
+    background-color: rgb(157, 191, 223);
+}
+.conditionalUserStylin{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#btnUser
+{
+    margin-left: 35px;
+    height: 44px;
+    margin-top: 25px;
+    width: 98px;
+}
+#btnUser:hover{
+    background-color: rgb(155, 221, 136);
+}
+#Userimage{
+    height: 80px;
+    width: 80px;
+    margin-left: 58px;
+    margin-top: -78px;
 }

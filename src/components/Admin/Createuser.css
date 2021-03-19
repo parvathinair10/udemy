@@ -1,25 +1,51 @@
 .Createuser{
-    width: 70%;
+    width: 500px;
     height: 500px;
     border:2px solid black;
     margin: auto;
-    margin-top: 128px;
+    margin-top: 90px;
     border-radius: 10px;
     background-color: rgb(220, 220, 235);
 }
-.styling{
+.Createuser:hover{
+    box-shadow: 10px 10px rgb(27, 25, 25);
+}
+#head{
+    height: 50px;
+    width: 50px;
+    display: inline;
+}
+.CreateuserStyling{
+    width: 300px;
     height: 200px;
-    width: 200px;
-    margin: auto;
-    margin-top: 80px;
-    text-align: center;
+    margin: 150px auto;
+    margin-left: 150px;
+    margin-top: 70px;
 }
-#create{
-   height: 50px;
-   width: 100px;
-   margin-top: 50px;
-   
+#btnCreateusers{
+    margin-left: 35px;
+    height: 44px;
+    margin-top: 25px;
 }
-.spacing{
-    margin-top: 15px;
+#btnCreateusers:hover{
+   background-color: rgb(155, 221, 136);
+}
+.conditionalStyling{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.input{
+    width: 185px;
+    height: 35px;
+}
+.input:hover{
+    background-color: rgb(157, 191, 223);
+}
+#image{
+    height: 80px;
+    width: 80px;
+    margin-left: 58px;
+    margin-top: -24px;
 }

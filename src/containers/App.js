@@ -26,7 +26,7 @@ state={
 componentDidMount(){
   axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response=>{
-          const movies = response.data.slice(0,3);
+          const movies = response.data.slice(0,15);
           const updatedmovie=movies.map(movie=>{
               return {
                         ...movie,

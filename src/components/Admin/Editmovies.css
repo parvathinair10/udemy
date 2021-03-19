@@ -1,12 +1,12 @@
 .Edit{
-    width: 70%;
-    height: 500px;
+    width: 30%;
+    height: 450px;
     border:2px solid black;
     margin: auto;
     margin-top: 128px;
     border-radius: 10px;
     background-color: rgb(220, 220, 235);
-
+    background-image: url('../../assets/background.jpg');
 }
 .decorate{
     padding: 52px;
@@ -38,4 +38,8 @@
 }
 .fetchdata{
     background-color: hotpink;
+}
+.editinput:hover
+{
+    background-color: rgb(214, 140, 140);
 }
