@@ -63,7 +63,7 @@ class Users extends Component {
     return (
       <div className="Userlogin">
       <div className="UserloginStyling">
-      <img src={Userlogo} id="Userimage"></img>
+      <img src={Userlogo} alt="Error loading" id="Userimage"></img>
       <form>
             <input type="email" className="userinput" placeholder="enter  ID" name="email" onChange={this.validateUserHandler}></input>
             <p className="conditionalUserStyling">{errors.id}</p>

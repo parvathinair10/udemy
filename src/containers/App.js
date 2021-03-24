@@ -53,7 +53,7 @@ movieSelectedHandler = (id,title) =>{
   render() {
     
     
-    {this.state.selectedPostId ? <Editmovies id={this.state.selectedPostId}></Editmovies> :  null}
+    // {this.state.selectedPostId ? <Editmovies id={this.state.selectedPostId}></Editmovies> :  null}
 
 
     

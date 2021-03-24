@@ -5,12 +5,16 @@ import Adminlogo from '../../assets/adminlogo.jpg'
 
 import {Link} from "react-router-dom";
 
+//for login
+import {connect} from "react-redux";
+import {fetchUser} from "../../redux";
+
 class Adminlogin extends Component {
   
    //to manage the state of admin login input fields
    state={
     errors:{
-                  id:"",
+                  email:"",
                   password:""
            }
         }
@@ -48,6 +52,12 @@ class Adminlogin extends Component {
         
   
   
+            //to submit the form
+            submitHandler = (event) => {
+                  event.preventDefault();
+                  this.props.onAuth(this.state.errors.email.value, this.state.errors.password.value);
+              }
+          
   
   render() {
 
@@ -59,10 +69,10 @@ class Adminlogin extends Component {
         
       <div className="Adminlogin">
       <div className="AdminloginStyling">
-      <img src={Adminlogo} id="Adminimage"></img>
-      <form>
+      <img src={Adminlogo} alt="Error loading" id="Adminimage"></img>
+      <form onSubmit={this.submitHandler}>
             <input type="email" className="admininput" placeholder="enter  ID" name="email" onChange={this.validateAdminHandler}></input>
-            <p className="conditionalAdminStyling">{errors.id}</p>
+            <p className="conditionalAdminStyling">{errors.email}</p>
             <input type="password" className="admininput" placeholder="enter  Password" name="password" onChange={this.validateAdminHandler}></input>
             <p className="conditionalAdminStyling">{errors.password}</p>
             <button id="btnAdmin"><Link to="/Editmovies">login</Link></button>
@@ -74,4 +84,11 @@ class Adminlogin extends Component {
 }
 }
 
-export default Adminlogin;
+//get the updated state value
+const mapDispatchToProps = dispatch => {
+      return {
+          onAuth: (email, password) => dispatch(fetchUser(email, password))
+      };
+  };
+
+export default connect(null,mapDispatchToProps)(Adminlogin);

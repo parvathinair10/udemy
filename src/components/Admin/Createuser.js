@@ -67,7 +67,7 @@ class Createuser extends Component {
     return (
                   <div className="Createuser">
                   <div className="CreateuserStyling">
-                  <img src={CreateUserLogo} id="image"></img>
+                  <img src={CreateUserLogo} alt="Error loading" id="image"></img>
                   <form>
                         <input type="text" className="input" placeholder="enter firstname" name="firstname" onChange={this.validateHandler}></input>
                         <p className="conditionalStyling">{errors.firstname}</p>

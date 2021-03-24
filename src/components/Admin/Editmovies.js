@@ -91,15 +91,16 @@ class Editmovies extends Component {
                             <input type="text" id="txt1" className="editinput" value={this.state.name} onChange={(event) => this.setState({name: event.target.value})}></input>
                         </div>
 
+                        
                         <div id="space2">
-                            <label for="txt2"> Release Date:</label>
-                            <input type="text" id="txt2" className="editinput" value={this.state.date} onChange={(event) => this.setState({date: event.target.value})}></input>
+                        <label for="txt2">Release Date:</label>
+                        <input type="date" id="txt2" className="editinput" value={this.state.date} onChange={(event) => this.setState({date: event.target.value})}></input>
                         </div>
 
-                        {/* <div id="space3">
-                            <label for="txt3">Image:</label>
-                            <input type="text" id="txt3" className="editinput" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})}></input>
-                        </div> */}
+                        <div id="space3">
+                        <label for="txt3">Select files:</label>
+                        <input type="file" id="txt3" className="editinput" value={this.state.image} onChange={(event) => this.setState({image: event.target.value})} ></input>
+                        </div>
 
                         <div id="space4">
                             <label for="txt4">Description:</label>
