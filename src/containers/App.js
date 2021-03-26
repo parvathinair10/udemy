@@ -24,7 +24,7 @@ state={
 
 //REPLACE
 componentDidMount(){
-  axios.get('https://jsonplaceholder.typicode.com/posts')
+  axios.get('movies/all')
         .then(response=>{
           const movies = response.data.slice(0,15);
           const updatedmovie=movies.map(movie=>{
@@ -61,10 +61,10 @@ movieSelectedHandler = (id,title) =>{
     const movies=this.state.movies.map(movie=>{
       return <Defaultpage 
               key={movie.id}
-              movname={movie.userid} 
-              movdate={movie.id} 
-              movlink={movie.title} 
-              movdesc={movie.body}
+              movname={movie.name} 
+              movdate={movie.releasedate} 
+              movlink={movie.image} 
+              movdesc={movie.description}
               movreview={movie.review}
               clicked={()=>this.movieSelectedHandler(movie.id,movie.title)}
               id={this.state.selectedPostId}

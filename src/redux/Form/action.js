@@ -34,7 +34,7 @@ export const fetchUser = (email, password) => {
             returnSecureToken:true
 
         }
-        axios.post("https://asc-movie-review-application.herokuapp.com/users/login",authData)
+        axios.post("users/login",authData)
         .then(response=>{
             console.log(response);
             dispatch(userSuccess(response.data));

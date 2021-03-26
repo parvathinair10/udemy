@@ -25,7 +25,7 @@ class Editmovies extends Component {
 
     componentDidUpdate(){
         if(this.props.id){
-            axios.get('https://jsonplaceholder.typicode.com/posts/'+this.props.id)
+            axios.get(''+this.props.id)
             .then(response=>{
                 console.log(response);
                 this.setState({loadedmovie:response.data})
@@ -42,7 +42,7 @@ class Editmovies extends Component {
                         image:this.state.image,
                         description:this.state.description
                     }
-        axios.post('https://jsonplaceholder.typicode.com/posts',movie)
+        axios.post('/movies',movie)
              .then(response=>{
                  console.log(response);
              })
