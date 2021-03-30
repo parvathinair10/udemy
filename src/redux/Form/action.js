@@ -34,7 +34,7 @@ export const fetchUser = (email, password) => {
             returnSecureToken:true
 
         }
-        axios.post("users/login",authData)
+        axios.post("https://5a33194fbbc9.ngrok.io/users/login",authData)
         .then(response=>{
             console.log(response);
             dispatch(userSuccess(response.data));

@@ -4,9 +4,11 @@ import './App.css';
 // import movies from "../components/start/Movieslist";
 import Defaultpage from '../components/start/Defaultpage'
 import Adminlogin from '../components/Admin/Adminlogin';
+import AdminRegistration from "../components/Admin/AdminRegistration";
 import Editmovies from '../components/Admin/Editmovies';
 import Createuser from '../components/Admin/Createuser';
 import Users from '../components/Users/Users';
+
 
 import {BrowserRouter,Route,Link,Switch} from "react-router-dom";
 import axios from 'axios';
@@ -99,6 +101,7 @@ movieSelectedHandler = (id,title) =>{
         <Route path="/Editmovies" component={Editmovies}></Route>
         <Route path="/Createuser" component={Createuser}></Route>
         <Route path="/Users" component={Users}></Route>
+        <Route path="/AdminRegistration" component={AdminRegistration}></Route>
         </Switch>
 
 
