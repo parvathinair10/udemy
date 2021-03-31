@@ -16,62 +16,68 @@ class Editmovies extends Component {
 
     state={
                 name:'',                            //for textboxes
-                date:'',
+                releasedate:'',
                 image:'',
                 description:'',
+            
+            }
 
-                loadedmovie:null
-          }
-
-    componentDidUpdate(){
-        if(this.props.id){
-            axios.get(''+this.props.id)
-            .then(response=>{
-                console.log(response);
-                this.setState({loadedmovie:response.data})
-            })
-        }
-    }
+    // componentDidUpdate(){
+    //     if(this.props.id){
+    //         axios.get(''+this.props.id)
+    //         .then(response=>{
+    //             console.log(response);
+    //             this.setState({loadedmovie:response.data})
+    //         })
+    //     }
+    // }
 
 
     //to add the data of (name,date,image,description)
-    postDataHandler=()=>{
-        const movie={
-                        name:this.state.name,
-                        date:this.state.date,
-                        image:this.state.image,
-                        description:this.state.description
-                    }
-        axios.post('/movies',movie)
-             .then(response=>{
-                 console.log(response);
-             })
+    postDataHandler=(event)=>{
+        console.log(localStorage.getItem("token"));
+
+        const config = {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer' + localStorage.getItem("token")
+            }
+          }
+
+           //URL+this.state+config
+          axios.post("https://asc-movie-review-application.herokuapp.com/movies",
+          JSON.stringify(this.state),config)
+          
+          .then(res=>{
+            console.log(res);
+            
+            this.setState({
+                name:event.target.value,
+                releasedate:event.target.value,
+                image:event.target.value,
+                description:event.target.value})
+                },console.log(this.state))
+  
+          .catch(err=>{
+            console.log(err);
+          })
+
+    
     }
 
     //to delete 
-    deletePostHandler=()=>{
-        axios.delete('https://jsonplaceholder.typicode.com/posts/'+this.props.id)
-             .then(response=>{
-                 console.log(response);
-             })
-    }
+    // deletePostHandler=()=>{
+    //     axios.delete('https://jsonplaceholder.typicode.com/posts/'+this.props.id)
+    //          .then(response=>{
+    //              console.log(response);
+    //          })
+    // }
     
     
   render() 
   {
     
-    
-    // if(this.props.id)
-    // {
-    //     console.log(this.props.id);
-    // }
-    // if(this.state.loadedmovie)
-    // {
-        
-    //  const selected=<div>{this.state.loadedmovie.title}</div>
-    // }
-    
-    return (
+     return (
                     
                         <div className="Edit">
 
@@ -81,9 +87,7 @@ class Editmovies extends Component {
                         </ul>
                         
                         
-                        {/* Starting of the form */}
-                        <form>
-
+                        
                         <div className="decorate">
 
                         <div id="space1">
@@ -115,7 +119,7 @@ class Editmovies extends Component {
 
                         
 
-                        </form>
+                        
 
                     </div>
                     

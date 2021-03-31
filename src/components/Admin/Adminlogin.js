@@ -20,11 +20,27 @@ class Adminlogin extends Component {
                           email:null,
                           password:null,
                           login:false,
-                          token:null
+                          token:null,
+                          store:null
                    }
                 }
 
    }
+
+
+        //If logged in only then will get the access to edit movie
+        //If you will clear localstorage then credentials and token both will get cleared and admin will not get access to edit movies   
+        //constructor()->render()->login()->componentDidMount()-render()
+        componentDidMount(){
+            let store=JSON.parse(localStorage.getItem("login"));
+            this.setState({store:store})
+            // console.log(this.state.store);
+            
+            if(store && store.login)
+            {
+                  this.setState({login:true})
+            }
+      }
    
       validateAdminHandler=(event)=>
         {
@@ -55,6 +71,10 @@ class Adminlogin extends Component {
                  }
                  this.setState({errors,[name]:value});    //updating the state 
             }
+
+
+      
+
         
             login()
             {
@@ -74,16 +94,19 @@ class Adminlogin extends Component {
                       localStorage.setItem('login',true);
                       localStorage.setItem('token',res.data.token);
             
-                      //update the state for register
+                      //update the state for login and token
                       this.setState({login:true,token:res.data.token})
+                      console.log("login : ",this.state.login);
+                      console.log("token : ",this.state.token);
             
-                      //updated token
-                      alert(this.state.token);
+                      
                     })
             
                     .catch(err=>{
                       console.log(err);
                     })
+
+                    
             }
   
             
@@ -96,7 +119,7 @@ class Adminlogin extends Component {
     return (
       <div className="Adminlogin">
 
-            {!this.state.login ?
+            {!this.state.login  ?
       <div className="AdminloginStyling">
       <img src={Adminlogo} alt="Error loading" id="Adminimage"></img>
       
@@ -107,14 +130,15 @@ class Adminlogin extends Component {
             {/* <button id="btnAdmin"><Link to="/Editmovies">login</Link></button> */}
             <button id="btnAdmin"  onClick={()=>{this.login()}}>login</button>
       <br></br>
-     
       <div>
            <Link to="/AdminRegistration" id="adminRegistrationlink">Not Registered??</Link>  
       </div>
       </div>
-       :<Editmovies></Editmovies>}
+      :
+      <Link to="/Editmovies" id="Userlogin">You are logged in!!</Link>
+       }
       </div> 
-);
+)
   
 }
 }

@@ -1,6 +1,6 @@
 {
   "name": "movie-review",
-  "proxy":"https://asc-movie-review-application.herokuapp.com",
+ 
   "version": "0.1.0",
   "private": true,
   "dependencies": {

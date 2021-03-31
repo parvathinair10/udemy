@@ -26,7 +26,7 @@ state={
 
 //REPLACE
 componentDidMount(){
-  axios.get('movies/all')
+  axios.get('https://asc-movie-review-application.herokuapp.com/movies/all')
         .then(response=>{
           const movies = response.data.slice(0,15);
           const updatedmovie=movies.map(movie=>{
